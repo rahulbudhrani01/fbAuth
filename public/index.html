@@ -18,9 +18,11 @@
 
     <script>
       function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-      }
+        FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      console.log(response.authResponse.accessToken);
+    }
+  });
+}
     </script>
 </html>

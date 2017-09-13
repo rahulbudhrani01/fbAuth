@@ -3,6 +3,6 @@
 	<p>Welcome! Please <a href="/login">log in</a>.</p>
 <% } else { %>
 	<% var firstName= user.displayName; %>
-	<% var firstName=.split(" ").slice(0).join(""); %>
+	<% var firstName=firstName.split(" ").slice(0).join(""); %>
 	<p>Hello, <%= firstName %>. View your <a href="/profile">profile</a>.</p>
 <% } %>

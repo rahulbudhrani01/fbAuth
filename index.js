@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 app.use(express.static('public'))
 app.listen(3000, () => console.log('Server running on port 3000'))
-
+/*
 function checkLoginState() {  FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     console.log(response.authResponse.accessToken);
@@ -13,3 +13,4 @@ function checkLoginState() {  FB.getLoginStatus(function(response) {
 FB.api('/me', function(response) {
     console.log(JSON.stringify(response));
 });
+*/

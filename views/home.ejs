@@ -2,6 +2,6 @@
 
 	<p>Welcome! Please <a href="/login">log in</a>.</p>
 <% } else { %>
-	<? comment.description = user.displayName.split(" ").slice(0).join(""); -?>
-	<p>Hello, <%= comment.description %>. View your <a href="/profile">profile</a>.</p>
+	<? firstName= user.displayName.split(" ").slice(0).join(""); -?>
+	<p>Hello, <%= firstName %>. View your <a href="/profile">profile</a>.</p>
 <% } %>

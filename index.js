@@ -61,7 +61,11 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 // session.
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(function(req, res, next) {
+    if (!req.user)
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    next();
+});
 
 // Define routes.
 app.get('/',

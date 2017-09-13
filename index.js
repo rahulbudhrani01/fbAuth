@@ -90,8 +90,8 @@ app.get('/profile',
   });
 
 
-  app.get('/logout', function(req, res) {
-          req.logout();
+  app.get('/logout', isLoggedIn, function(req, res) {
+          req.logOut();
           delete req.user;
           req.user=null;
           if (!req.user)

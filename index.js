@@ -92,7 +92,8 @@ app.get('/profile',
 
   app.get('/logout', function(req, res) {
           req.logout();
-          delete req.user
+          delete req.user;
+          req.user=null;
           res.redirect('/');
       });
 app.listen(3000);

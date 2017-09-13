@@ -64,6 +64,14 @@ app.use(passport.session());
 
 
 // Define routes.
+app.get('/logout', function(req, res) {
+        req.logOut();
+        delete req.user;
+        req.user=null;
+        if (!req.user)
+            res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        res.redirect('/');
+    });
 app.get('/',
   function(req, res) {
     res.render('home', { user: req.user });
@@ -90,12 +98,5 @@ app.get('/profile',
   });
 
 
-  app.get('/logout', function(req, res) {
-          req.logOut();
-          delete req.user;
-          req.user=null;
-          if (!req.user)
-              res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-          res.redirect('/');
-      });
+
 app.listen(3000);

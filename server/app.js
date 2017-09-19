@@ -24,7 +24,7 @@ var app = express();
 
 
 // *** mongoose *** //
-mongoose.connect('mongodb://config.database.username:config.database.password@mongodb://localhost/passport-social-auth');
+mongoose.connect('mongodb://config.database.username:config.database.password@localhost/passport-social-auth');
 
 
 

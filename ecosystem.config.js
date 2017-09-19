@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-52-15-226-69.us-east-2.compute.amazonaws.com',
+      host: 'ec2-18-221-155-123.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/firstApp.pem',
       ref: 'origin/master',
       repo: 'git@github.com:rahulbudhrani01/fbAuth',

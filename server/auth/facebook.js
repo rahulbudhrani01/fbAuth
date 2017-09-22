@@ -1,7 +1,7 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook');
 
-var user = require('../models/user');
+var User = require('../models/user');
 var config = require('../_config');
 var init = require('./init');
 

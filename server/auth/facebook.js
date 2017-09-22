@@ -29,9 +29,12 @@ passport.use(new FacebookStrategy({
     // update the user if s/he exists or add a new user
     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
       if(err) {
+        console.log(throw err;);
         return done(err);
       } else {
+        console.log("Updated");
         return done(null, user);
+
       }
     });
   }

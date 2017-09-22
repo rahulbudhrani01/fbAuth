@@ -26,7 +26,7 @@ passport.use(new FacebookStrategy({
     console.log("After updates");
     var options = {
 
-      upsert: true
+      new: true
     };
     console.log("After options\n username:"+profile.displayName);
     console.log("id:"+profile.id);

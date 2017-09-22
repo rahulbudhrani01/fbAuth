@@ -28,7 +28,8 @@ passport.use(new FacebookStrategy({
 
       upsert: true
     };
-    console.log("After options");
+    console.log("After options\n username:"+profile.displayName);
+    console.log("id:"+profile.id);
     // update the user if s/he exists or add a new user
     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
         console.log("Inside findOneAndUpdate");

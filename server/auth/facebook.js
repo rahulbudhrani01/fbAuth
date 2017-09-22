@@ -14,20 +14,24 @@ passport.use(new FacebookStrategy({
   function(token, tokenSecret, profile, done) {
     console.log("Inside the function");
     var searchQuery = {
+      console.log("Inside searchQuery");
       name: profile.displayName
     };
 
     var updates = {
+      console.log("Inside updates");
       name: profile.displayName,
       someID: profile.id
     };
 
     var options = {
+      console.log("Inside options");
       upsert: true
     };
 
     // update the user if s/he exists or add a new user
     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
+        console.log("Inside findOneAndUpdate");
       if(err) {
           throw err;
         return done(err);

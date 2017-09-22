@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   },
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
-
+    console.log("Inside the function");
     var searchQuery = {
       name: profile.displayName
     };
@@ -37,9 +37,7 @@ passport.use(new FacebookStrategy({
 
       }
     });
-  }
-
-));
+  }));
 
 // serialize user into the session
 init();

@@ -58,14 +58,14 @@ app.use(passport.session());
 // *** main routes *** //
 app.use('/', routes);
 
-/*
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-*/
+
 /*
 // *** error handlers *** //
 
@@ -80,7 +80,7 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
+*/
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -90,5 +90,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-*/
+
 app.listen(3000);

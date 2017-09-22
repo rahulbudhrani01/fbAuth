@@ -96,6 +96,6 @@ if (app.get('env') === 'development') {
     console.log(err.message);
       console.log(console.error);
     });
-  });
+
 
 app.listen(3000);

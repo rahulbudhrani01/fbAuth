@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   },
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
-
+    var profile = JSON.stringify(profile);
     var searchQuery = {
 
       name: profile.displayName
@@ -20,7 +20,7 @@ passport.use(new FacebookStrategy({
 
     var updates = {$set:{
 
-      name: profile.displayName,
+      //name: profile.displayName,
       someID: profile.id
     }};
 

@@ -5,7 +5,7 @@ module.exports = {
     node_args: ["--debug=7000"]
   }],
   deploy: {
-    production: {
+    development: {
       user: 'ubuntu',
       host: 'ec2-18-221-155-123.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/firstApp.pem',

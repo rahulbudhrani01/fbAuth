@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'fbAuth',
-    script: './index.js'
+    script: './server/app.js'
   }],
   deploy: {
     production: {

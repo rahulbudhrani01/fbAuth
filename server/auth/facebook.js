@@ -12,24 +12,23 @@ passport.use(new FacebookStrategy({
   },
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
-    console.log("Inside the function");
+
     var searchQuery = {
 
       name: profile.displayName
     };
-    console.log("After searchQuery");
-    var updates = {
+
+    var updates = {$set:{
 
       name: profile.displayName,
       someID: profile.id
-    };
-    console.log("After updates");
+    }};
+
     var options = {
 
       new: true
     };
-    console.log("After options\n username:"+profile.displayName);
-    console.log("id:"+profile.id);
+
     // update the user if s/he exists or add a new user
     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
         console.log("Inside findOneAndUpdate");

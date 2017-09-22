@@ -16,9 +16,9 @@ router.get('/login',
     res.render('login');
   });
 
-router.get('/auth/facebook', passportFacebook.authenticate('facebook'));
+router.get('/login/facebook', passportFacebook.authenticate('facebook'));
 
-router.get('/auth/facebook/callback',
+router.get('/login/facebook/callback',
   passportFacebook.authenticate('facebook', { failureRedirect: '/login' }),  function(req, res) {
     res.redirect('/');
   });

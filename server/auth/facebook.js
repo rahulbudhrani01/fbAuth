@@ -13,6 +13,8 @@ passport.use(new FacebookStrategy({
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
     console.log("Inside fb token function");
+     return cb(null, profile);
+      }));
     /*
     var searchQuery = {
 
@@ -56,5 +58,5 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(obj, cb) {
   done(null, obj);
 });
-  }));
+
 module.exports = passport;

@@ -13,7 +13,7 @@ passport.use(new FacebookStrategy({
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
     console.log("Inside fb token function");
-     return cb(null, profile);
+     return done(null, profile);
       }));
     /*
     var searchQuery = {

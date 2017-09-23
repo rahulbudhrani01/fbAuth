@@ -13,9 +13,7 @@ passport.use(new FacebookStrategy({
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
     console.log("Inside fb token function");
-     return done(null, profile);
-      }));
-    /*
+
     var searchQuery = {
 
       name: profile.displayName
@@ -32,6 +30,10 @@ passport.use(new FacebookStrategy({
       new: true
     };
 
+    return done(null, profile);
+     }));
+
+/*
     // update the user if s/he exists or add a new user
     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
         console.log("Inside findOneAndUpdate");
@@ -51,14 +53,6 @@ passport.use(new FacebookStrategy({
 
 */
 init();
-/*
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
 
-passport.deserializeUser(function(obj, cb) {
-  done(null, obj);
-});
-*/
 
 module.exports = passport;

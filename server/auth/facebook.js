@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   },
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
-    var profile = JSON.stringify(profile);
+    /*
     var searchQuery = {
 
       name: profile.displayName
@@ -46,5 +46,27 @@ passport.use(new FacebookStrategy({
 // serialize user into the session
 init();
 
+*/
+process.nextTick(function() {
+      User.findOne({ 'someID': profile.id }, function(err, user) {
+        if (err)
+          return done(err);
+        if (user) {
+          return done(null, user);
+        } else {
+          var newUser = new User();
+          newUser.someID = profile.id;
+          //newUser.facebook.token = token;
+          newUser.name = profile.displayName;
+          //newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
 
+          newUser.save(function(err) {
+            if (err)
+              throw err;
+            return done(null, newUser);
+          });
+        }
+      });
+    });
+  }));
 module.exports = passport;

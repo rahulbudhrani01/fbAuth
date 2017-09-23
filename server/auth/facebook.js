@@ -50,7 +50,8 @@ passport.use(new FacebookStrategy({
 
 
 */
-//init();
+init();
+/*
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
@@ -58,5 +59,6 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(obj, cb) {
   done(null, obj);
 });
+*/
 
 module.exports = passport;

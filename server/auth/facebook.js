@@ -49,6 +49,7 @@ init();
 */
 process.nextTick(function() {
       User.findOne({ 'someID': profile.id }, function(err, user) {
+        console.log("Inside findOne");
         if (err)
           return done(err);
         if (user) {

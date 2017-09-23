@@ -48,6 +48,17 @@ passport.use(new FacebookStrategy({
 
 
 */
-init();
+//init();
+passport.serializeUser(function(user, done) {
+  console.log("Serializing");
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  console.log("Derializing");
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
+});
   }));
 module.exports = passport;

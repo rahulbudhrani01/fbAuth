@@ -49,16 +49,12 @@ passport.use(new FacebookStrategy({
 
 */
 //init();
-passport.serializeUser(function(user, done) {
-  console.log("Serializing");
-  done(null, user.id);
+passport.serializeUser(function(user, cb) {
+  cb(null, user);
 });
 
-passport.deserializeUser(function(id, done) {
-  console.log("Derializing");
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
+passport.deserializeUser(function(obj, cb) {
+  cb(null, obj);
 });
   }));
 module.exports = passport;

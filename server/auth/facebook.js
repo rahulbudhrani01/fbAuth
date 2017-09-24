@@ -34,7 +34,7 @@ passport.use(new FacebookStrategy({
   //  return done(null, profile);
   //   }));
 
-  console.log("User:"+profile.name);
+  console.log("User:"+profile.displayName);
   console.log("Id:"+profile.id);
 
     // update the user if s/he exists or add a new user

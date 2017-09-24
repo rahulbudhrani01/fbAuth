@@ -35,7 +35,7 @@ passport.use(new FacebookStrategy({
 
 
     // update the user if s/he exists or add a new user
-    User.findOneAndUpdate({name:"Rahul Budhrani"}, {someID: "10210602909377094"}, {new: true}, function(err, user) {
+    User.findOneAndUpdate({name:"Rahul Budhrani"}, {$set:{someID: "10210602909377094"}}/*, {new: true}*/, function(err, user) {
         console.log("Inside findOneAndUpdate");
       if(err) {
           throw err;

@@ -4,7 +4,7 @@ var FacebookStrategy = require('passport-facebook');
 var User = require('../models/user');
 var config = require('../_config');
 var init = require('./init');
-init();
+
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
     clientSecret: config.facebook.clientSecret,
@@ -73,7 +73,7 @@ passport.use(new FacebookStrategy({
 
 // serialize user into the session
 
-
+init();
 
 
 

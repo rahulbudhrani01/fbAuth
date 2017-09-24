@@ -23,7 +23,7 @@ passport.use(new FacebookStrategy({
     var updates = {$set:{
 
       //name: profile.displayName,
-      someID: profile.id
+      id: profile.id
     }};
 
     var options = {

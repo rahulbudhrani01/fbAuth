@@ -12,6 +12,7 @@ passport.use(new FacebookStrategy({
   },
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
+    process.nextTick(function() {
     console.log("Inside fb token function");
 
     var searchQuery = {
@@ -57,12 +58,12 @@ passport.use(new FacebookStrategy({
        }
      });
    }));
-
+};
 // serialize user into the session
 
 
 
-init();
+
 
 
 module.exports = passport;

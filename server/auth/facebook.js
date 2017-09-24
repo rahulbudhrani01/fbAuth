@@ -30,10 +30,10 @@ passport.use(new FacebookStrategy({
       new: true
     };
 
-    return done(null, profile);
-     }));
+  //  return done(null, profile);
+  //   }));
 
-/*
+
     // update the user if s/he exists or add a new user
     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
         console.log("Inside findOneAndUpdate");
@@ -51,7 +51,7 @@ passport.use(new FacebookStrategy({
 // serialize user into the session
 
 
-*/
+
 init();
 
 

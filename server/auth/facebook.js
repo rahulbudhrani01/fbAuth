@@ -67,8 +67,8 @@ passport.use(new FacebookStrategy({
          return done(null, user);
        }
      });
-   }
-   });
+ });
+
    }));
 
 // serialize user into the session

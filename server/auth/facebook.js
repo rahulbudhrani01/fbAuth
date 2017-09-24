@@ -52,7 +52,9 @@ passport.use(new FacebookStrategy({
              throw err;
            return done(null, newUser);
          });
-  }));
+       }
+     });
+   }));
 
 // serialize user into the session
 

@@ -13,7 +13,7 @@ var UserSchema = new Schema({
   name: String,
   id: Number,
 });
-var User=mongoose.model('user', User);
+var User=mongoose.model('user', UserSchema);
 
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,

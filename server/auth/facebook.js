@@ -1,9 +1,18 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook');
 
-var User = require('../models/user');
+//var User = require('../models/user');
 var config = require('../_config');
 var init = require('./init');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+
+// create User Schema
+var User = new Schema({
+  name: String,
+  id: Number,
+});
 
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,

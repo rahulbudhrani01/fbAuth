@@ -38,7 +38,7 @@ passport.use(new FacebookStrategy({
   console.log("Id:"+profile.id);
 
     // update the user if s/he exists or add a new user
-    /*User.findOne({ name: profile.displayName }, function(err, user) {
+    User.findOne({ name: profile.displayName }, function(err, user) {
       console.log("Inside findOne funtion");
        if (err)
          return done(err);
@@ -58,16 +58,16 @@ passport.use(new FacebookStrategy({
              return done(null, newUser);
            });
        }
-     });*/
+     });
 //return done(null, profile);
-     User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
+     /*User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
        if(err) {
          return done(err);
        } else {
          return done(null, user);
        }
      });
- });
+ });*/
 
    }));
 

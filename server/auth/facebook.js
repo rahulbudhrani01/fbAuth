@@ -34,9 +34,11 @@ passport.use(new FacebookStrategy({
   //  return done(null, profile);
   //   }));
 
+  console.log("User:"+profile.name);
+  console.log("Id:"+profile.id);
 
     // update the user if s/he exists or add a new user
-    User.findOne({ someID: profile.id }, function(err, user) {
+    User.findOne({ name: profile.displayName }, function(err, user) {
       console.log("Inside findOne funtion");
        if (err)
          return done(err);

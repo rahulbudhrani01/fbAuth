@@ -9,10 +9,11 @@ var Schema = mongoose.Schema;
 
 
 // create User Schema
-var User = new Schema({
+var UserSchema = new Schema({
   name: String,
   id: Number,
 });
+var User=mongoose.model('user', User);
 
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
@@ -79,7 +80,7 @@ passport.use(new FacebookStrategy({
      });
  //});
 */
-  
+
    }));
 
 // serialize user into the session

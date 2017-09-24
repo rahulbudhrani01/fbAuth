@@ -36,11 +36,13 @@ passport.use(new FacebookStrategy({
 
     // update the user if s/he exists or add a new user
     User.findOne({ 'someID': profile.id }, function(err, user) {
+      console.log("Inside findOne funtion");
        if (err)
          return done(err);
        if (user) {
          return done(null, user);
        } else {
+         console.log("Inside add new User else");
          var newUser = new User();
          newUser.someID = profile.id;
          //newUser.facebook.token = token;

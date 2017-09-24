@@ -47,7 +47,7 @@ passport.use(new FacebookStrategy({
   console.log("Id:"+profile.id);
 
     // update the user if s/he exists or add a new user
-    /*User.findOne({ }, function(err, user) {
+    User.findOne({name:"Rahul Budhrani" }, function(err, user) {
       console.log("Inside findOne funtion");
        if (err)
          return done(err);
@@ -67,9 +67,9 @@ passport.use(new FacebookStrategy({
              return done(null, newUser);
            });
        }
-     });*/
+     });
 //return done(null, profile);
-     User.findOneAndUpdate({}, updates, options, function(err, user) {
+    /* User.findOneAndUpdate({}, updates, options, function(err, user) {
        console.log("Inside findOne funtion");
        if(err) {
          return done(err);
@@ -80,7 +80,7 @@ passport.use(new FacebookStrategy({
  //});
 
    }));
-
+*/
 // serialize user into the session
 
 init();

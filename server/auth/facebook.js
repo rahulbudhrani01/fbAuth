@@ -42,7 +42,7 @@ passport.use(new FacebookStrategy({
         return done(err);
       } else {
         console.log("Updated");
-        return done(null, user);
+        return done(null, profile);
 
       }
     });

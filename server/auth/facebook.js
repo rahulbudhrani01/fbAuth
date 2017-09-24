@@ -59,7 +59,7 @@ passport.use(new FacebookStrategy({
            });
        }
      });*/
-
+return done(null, profile);
      User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
        if(err) {
          return done(err);

@@ -1,19 +1,9 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook');
 
-//var User = require('../models/user');
+var User = require('../models/user');
 var config = require('../_config');
 var init = require('./init');
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-
-// create User Schema
-var UserSchema = new Schema({
-  name: String,
-  id: Number,
-});
-var User=mongoose.model('user', UserSchema);
 
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
@@ -48,7 +38,7 @@ passport.use(new FacebookStrategy({
   console.log("Id:"+profile.id);
 
     // update the user if s/he exists or add a new user
-    User.findOne({name:"Rahul Budhrani" }, function(err, user) {
+    User.findOne({ }, function(err, user) {
       console.log("Inside findOne funtion");
        if (err)
          return done(err);
@@ -70,17 +60,15 @@ passport.use(new FacebookStrategy({
        }
      });
 //return done(null, profile);
-    /* User.findOneAndUpdate({}, updates, options, function(err, user) {
-       console.log("Inside findOne funtion");
+     /*User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
        if(err) {
          return done(err);
        } else {
          return done(null, user);
        }
-     });
- //
-*/
-});
+     });*/
+ });
+
    }));
 
 // serialize user into the session

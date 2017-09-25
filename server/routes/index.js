@@ -20,12 +20,10 @@ router.get('/login/facebook', passportFacebook.authenticate('facebook'));
 
 router.get('/login/facebook/return',
   passportFacebook.authenticate('facebook', { failureRedirect: '/login' }),  function(req, res) {
-    res.redirect('/profile');
+    res.redirect('/');
 
     //Successful authentication
-  // res.json(req.user);
-   //res.send('Hurray!! signed in!');
-   //res.redirect('/profile');
+  
   });
 
 router.get('/profile',

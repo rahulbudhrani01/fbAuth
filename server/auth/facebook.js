@@ -14,32 +14,13 @@ passport.use(new FacebookStrategy({
   function(token, tokenSecret, profile, done) {
   //  process.nextTick(function() {
     console.log("Inside fb token function");
-    //var newUser = new User();
-    //newUser.id = profile.id;
-    //newUser.facebook.token = token;
-    //newUser.name = profile.displayName;
-    //newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
 
-    /*newUser.save(function(err) {
-      if (err)
-        throw err;
-      //return done(null, newUser);
-    });*/
     var searchQuery = {
 
       name: profile.displayName
     };
 
-    var updates = {$set:{
 
-      //name: profile.displayName,
-      id: profile.id
-    }};
-
-    var options = {
-
-      new: true
-    };
 
   //  return done(null, profile);
   //   }));
@@ -53,6 +34,7 @@ passport.use(new FacebookStrategy({
        if (err)
          return done(err);
        if (user) {
+         user.id= profile.id;
          return done(null, user);
        } else {
            console.log("Inside add new User else");

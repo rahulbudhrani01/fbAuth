@@ -28,7 +28,7 @@ var db = mongoose.connection;
 
 // When successfully connected
 db.on('connected', function() {
-    logger.info('Mongo DB connection open for DB');
+    console.log('Mongo DB connection open for DB');
 });
 
 

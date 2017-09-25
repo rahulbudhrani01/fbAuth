@@ -10,7 +10,7 @@ module.exports = function() {
   });
 
   passport.deserializeUser(function(id, done) {
-      User.findById(req.user.id, function(err, user) {
+      User.findOne({_id:id}, function(err, user) {
         done(err, user);
       });
     });

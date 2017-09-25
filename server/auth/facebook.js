@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
   },
   // facebook sends back the tokens and progile info
   function(token, tokenSecret, profile, done) {
-    process.nextTick(function() {
+  //  process.nextTick(function() {
     console.log("Inside fb token function");
     //var newUser = new User();
     //newUser.id = profile.id;
@@ -68,7 +68,7 @@ passport.use(new FacebookStrategy({
              return done(null, newUser);
            });
        }
-     });
+//     });
 
      /*User.findOneAndUpdate(searchQuery, updates, options, function(err, user) {
        if(err) {

@@ -20,11 +20,11 @@ passport.use(new FacebookStrategy({
     newUser.name = profile.displayName;
     //newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
 
-    newUser.save(function(err) {
+    /*newUser.save(function(err) {
       if (err)
         throw err;
       //return done(null, newUser);
-    });
+    });*/
     var searchQuery = {
 
       name: profile.displayName

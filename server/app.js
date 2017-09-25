@@ -15,7 +15,7 @@ var routes = require('./routes/index.js');
 
 // *** express instance *** //
 var app = express();
-
+mongoose.Promise = global.Promise;
 
 
 

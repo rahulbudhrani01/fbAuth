@@ -25,7 +25,7 @@ var options = {
   user: 'rahul',
   pass: 'password'
 }
-mongoose.connect(uri, options);
+//mongoose.connect(uri, options);
 
 
 

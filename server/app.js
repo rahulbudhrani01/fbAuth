@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
 var mongoose = require('mongoose');
-var config = require('~/_config');
+var config = require('~/_config.js');
 // *** routes *** //
 var routes = require('./routes/index.js');
 

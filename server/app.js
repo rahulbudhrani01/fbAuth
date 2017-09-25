@@ -22,7 +22,7 @@ var app = express();
 
 
 // *** mongoose *** //
-mongoose.connect('mongodb://config.database.username:config.database.password@18.221.155.123:27017/passport-social-auth',  { useMongoClient: true },{ promiseLibrary: require('bluebird') });
+mongoose.connect('mongodb://config.database.username:config.database.password@18.221.155.123:27017/passport-social-auth',  { useMongoClient: true, promiseLibrary: require('bluebird') });
 //mongoose.connect('mongodb://127.0.0.1:27017/passport-social-auth');
 
 

@@ -14,10 +14,10 @@ passport.use(new FacebookStrategy({
   function(token, tokenSecret, profile, done) {
     process.nextTick(function() {
     console.log("Inside fb token function");
-    var newUser = new User();
-    newUser.id = profile.id;
+    //var newUser = new User();
+    //newUser.id = profile.id;
     //newUser.facebook.token = token;
-    newUser.name = profile.displayName;
+    //newUser.name = profile.displayName;
     //newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
 
     /*newUser.save(function(err) {

@@ -1,3 +1,4 @@
 node_modules
 .DS_Store
 ./server/_config.js
+_config.js

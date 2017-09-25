@@ -24,7 +24,7 @@ router.get('/login/facebook/return',
 
     //Successful authentication
   // res.json(req.user);
-   res.send('Hurray!! signed in!');
+   //res.send('Hurray!! signed in!');
    //res.redirect('/profile');
   });
 

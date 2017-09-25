@@ -22,8 +22,8 @@ var options = {
   server: { poolSize: 5 },
   replset: { rs_name: 'myReplicaSetName' },
   //useMongoClient: true,
-  user: 'rahul',
-  pass: 'password'
+  user: config.database.username,
+  pass: config.database.password,
 }
 //mongoose.connect(uri, options);
 

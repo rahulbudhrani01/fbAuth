@@ -6,11 +6,11 @@ module.exports = function() {
 
   passport.serializeUser(function(user, done) {
     console.log("Serializing");
-    done(null, user.id);
+    done(null, user._id);
   });
 
   passport.deserializeUser(function(id, done) {
-      User.findOne({id:id}, function(err, user) {
+      User.findOne({_id:id}, function(err, user) {
         done(err, user);
       });
     });

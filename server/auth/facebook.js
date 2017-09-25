@@ -2,7 +2,7 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook');
 
 var User = require('../models/user');
-var config = require('../_config');
+var config = require('~/_config');
 var init = require('./init');
 
 passport.use(new FacebookStrategy({

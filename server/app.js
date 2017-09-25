@@ -24,7 +24,12 @@ var app = express();
 // *** mongoose *** //
 mongoose.connect('mongodb://config.database.username:config.database.password@18.221.155.123:27017/passport-social-auth',  { useMongoClient: true });
 //mongoose.connect('mongodb://127.0.0.1:27017/passport-social-auth');
+var db = mongoose.connection;
 
+// When successfully connected
+db.on('connected', function() {
+    logger.info('Mongo DB connection open for DB');
+});
 
 
 
